@@ -1,5 +1,6 @@
 "use client";
 
+import { useCart } from "@/context/CartContext";
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import  getMangaById  from "@/actions/getMangaById";
@@ -7,6 +8,7 @@ import  getMangaById  from "@/actions/getMangaById";
 const MangaDetailPage = () => {
   const { id } = useParams();
   const [manga, setManga] = useState(null);
+  const { addToCart } = useCart(); 
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -63,11 +65,9 @@ const MangaDetailPage = () => {
             <strong>Volumen:</strong> {manga.volumen}
           </p>
           <button
-            onClick={() => {
-              /* Adicionar lógica do carrinho aqui */
-            }}
-            className="mt-6 bg-violet-600 text-white px-6 py-3 rounded-lg hover:bg-violet-500 transition"
-          >
+             onClick={() => addToCart(manga)} 
+             className="mt-6 bg-violet-600 text-white px-6 py-3 rounded-lg hover:bg-violet-500 transition"
+           >
             Agregar al carrito
           </button>
         </div>

@@ -20,4 +20,5 @@ const getMangaById = async (id) => {
   }
 };
 
+
 export default getMangaById;

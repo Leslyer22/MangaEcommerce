@@ -2,8 +2,6 @@ import Image from "next/image";
 import getMangas from "@/actions/getMangas";
 import Link from "next/link";
 
-
-
  async function MangasPage() {
   const mangas = await getMangas();
 

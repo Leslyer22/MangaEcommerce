@@ -1,7 +1,7 @@
 import "./globals.css";
 import  Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
+import { CartProvider } from "@/context/CartContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +13,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="  min-h-screen flex flex-col">
         <Header />
-        <main className="grow p-4 flex flex-col">{children}</main>
+        <CartProvider>
+      <main className="grow p-4 flex flex-col">{children}</main>
+    </CartProvider>
         <Footer />
       </body>
     </html>
