@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useParams } from "next/navigation"; 
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/firebase/config";
+import { useParams } from "next/navigation";
+import  getMangaById  from "@/actions/getMangaById";
 
 const MangaDetailPage = () => {
   const { id } = useParams();
@@ -13,33 +12,21 @@ const MangaDetailPage = () => {
   useEffect(() => {
     if (id) {
       const fetchManga = async () => {
-        try {
-          const docRef = doc(db, "mangas", id);
-          const docSnap = await getDoc(docRef);
-
-          if (docSnap.exists()) {
-            setManga(docSnap.data());
-          } else {
-            console.error("Manga não encontrado.");
-          }
-        } catch (error) {
-          console.error("Erro ao obter o manga:", error);
-        } finally {
-          setLoading(false);
-        }
+        const data = await getMangaById(id);
+        setManga(data);
+        setLoading(false);
       };
 
       fetchManga();
     }
   }, [id]);
 
-  if (loading) return <p>Cargando...</p>;
-  if (!manga) return <p>Manga no encontrado.</p>;
+  if (loading) return <p>Carregando...</p>;
+  if (!manga) return <p>Manga não encontrado.</p>;
 
   return (
     <div className="container mx-auto p-4">
       <div className="flex flex-col md:flex-row">
-        {/* Imagem do manga */}
         <div className="relative h-96 w-full md:w-1/3 mb-6 md:mb-0">
           <img
             src={manga.imagen}
@@ -47,8 +34,6 @@ const MangaDetailPage = () => {
             className="object-cover w-full h-full rounded-lg"
           />
         </div>
-
-        {/* Detalhes do manga */}
         <div className="md:w-2/3 md:pl-8">
           <h1 className="text-3xl font-bold text-violet-600 mb-4">
             {manga.nombre}
@@ -77,8 +62,6 @@ const MangaDetailPage = () => {
           <p className="text-sm text-gray-600 mb-4">
             <strong>Volumen:</strong> {manga.volumen}
           </p>
-
-          {/* Botão para adicionar ao carrinho */}
           <button
             onClick={() => {
               /* Adicionar lógica do carrinho aqui */
