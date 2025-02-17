@@ -6,7 +6,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase/config";
 
 const MangaDetailPage = () => {
-  const { id } = useParams(); // Usando useParams para acessar o ID da URL
+  const { id } = useParams();
   const [manga, setManga] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -33,8 +33,8 @@ const MangaDetailPage = () => {
     }
   }, [id]);
 
-  if (loading) return <p>Carregando...</p>;
-  if (!manga) return <p>Manga não encontrado.</p>;
+  if (loading) return <p>Cargando...</p>;
+  if (!manga) return <p>Manga no encontrado.</p>;
 
   return (
     <div className="container mx-auto p-4">
