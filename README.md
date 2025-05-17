@@ -1,33 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛒 MangaStore - Ecommerce de Manga
 
-## Getting Started
+Proyecto desarrollado con **Next.js**, **Tailwind CSS** y **Firebase**. Esta tienda online permite visualizar productos de manga, ver detalles, agregarlos al carrito y eliminarlos. Ideal como proyecto base para un e-commerce moderno.
 
-First, run the development server:
+## 🚀 Tecnologías utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- ⚡ [Next.js](https://nextjs.org/) - Framework React con renderizado híbrido
+- 🎨 [Tailwind CSS](https://tailwindcss.com/) - Framework de estilos utilitario
+- 🔥 [Firebase](https://firebase.google.com/) - Backend (Firestore, Auth y Hosting)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🖼️ Funcionalidades implementadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ✅ Listado de productos
+- ✅ Página de detalles del producto
+- ✅ Agregar al carrito
+- ✅ Eliminar productos del carrito
+- ✅ Diseño responsive
 
-## Learn More
+---
 
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
