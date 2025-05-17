@@ -20,7 +20,7 @@ import Link from "next/link";
             {/* Contenedor de la imagen */}
             <div className="relative h-48 w-full">
               <Image
-                src={""}
+                src={manga.imagen}
                 alt={manga.nombre}
                 layout="fill"
                 objectFit="cover"
