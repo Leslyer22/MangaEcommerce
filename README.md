@@ -7,7 +7,7 @@ Desarrollé este proyecto con **Next.js**, **Tailwind CSS** y **Firebase** como 
 
 - ⚡ [Next.js](https://nextjs.org/) - Framework React con renderizado híbrido
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) - Framework de estilos utilitario
-- 🔥 [Firebase](https://firebase.google.com/) - Backend (Firestore, Auth y Hosting)
+- 🔥 [Firebase](https://firebase.google.com/) - Base de Datos 
 
 ---
 
